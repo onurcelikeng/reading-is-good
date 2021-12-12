@@ -36,3 +36,7 @@ Run **build.sh** file in directory root. This will compile application and build
 ## RUN
 
     > docker-compose -f docker-compose.yaml up
+
+## USAGE
+
+    > http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
