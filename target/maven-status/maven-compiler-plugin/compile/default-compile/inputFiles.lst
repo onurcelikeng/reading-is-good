@@ -1,3 +1,4 @@
+/Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/statistics/service/StatisticsServiceImpl.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/book/mapper/BookMapper.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/customer/mapper/CustomerMapper.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/order/entity/OrderItem.java
@@ -11,9 +12,11 @@
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/order/util/OrderNumberUtil.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/auth/controller/AuthController.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/address/constant/AddressConstant.java
+/Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/statistics/controller/StatisticsController.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/order/mapper/OrderItemMapper.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/book/dto/BookAddInput.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/auth/service/impl/UserDetailServiceImpl.java
+/Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/statistics/service/StatisticsService.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/auth/dto/AuthOutput.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/address/controller/AddressController.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/address/entity/Address.java
@@ -54,6 +57,7 @@
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/core/exception/SystemException.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/order/entity/Order.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/customer/repository/CustomerRepository.java
+/Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/statistics/dto/StatisticsOutput.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/order/dto/order/OrderOutput.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/customer/service/CustomerService.java
 /Users/onurcelikeng/Documents/GitHub/reading-is-good/src/main/java/com/onurcelik/readingisgood/customer/entity/Customer.java
