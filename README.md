@@ -4,20 +4,21 @@ deliver books from its one centralized warehouse to their customers within the s
 is the first priority for their vision operations.
 
 ## FEATURES
-    • Registering New Customer 
+    • Registering New Customer
     • Placing a new order
     • Tracking the stock of books
     • List all orders of the customer with Pagination
     • Viewing the order details
-    • Query Monthly Statistics  
+    • Query Monthly Statistics
 
 ## TECH STACK
     • Java 15
     • Spring Boot 2.6.1
         - Spring Security
         - Bearer Token Auth (JWT)
-    -    Spring Data MongoDB
-    • lombok
+        - Spring Data MongoDB
+    • JUnit 5
+    • Lombok
     • MongoDB
     • Swagger3
     • Docker

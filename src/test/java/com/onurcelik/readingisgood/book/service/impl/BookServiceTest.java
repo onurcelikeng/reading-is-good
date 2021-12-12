@@ -2,6 +2,7 @@ package com.onurcelik.readingisgood.book.service.impl;
 
 import com.onurcelik.readingisgood.book.dto.BookAddInput;
 import com.onurcelik.readingisgood.book.dto.BookDetailOutput;
+import com.onurcelik.readingisgood.book.dto.BookUpdateInput;
 import com.onurcelik.readingisgood.book.entity.Book;
 import com.onurcelik.readingisgood.book.repository.BookRepository;
 import com.onurcelik.readingisgood.book.service.BookService;
@@ -29,6 +30,7 @@ class BookServiceTest {
     private BookService bookService;
 
     private BookAddInput input;
+    private BookUpdateInput bookUpdateInput;
 
     @BeforeEach
     void setup() {
@@ -40,6 +42,10 @@ class BookServiceTest {
         input.setPublisher("test_publisher");
         input.setPrice(35);
         input.setStock(25);
+
+        bookUpdateInput = new BookUpdateInput();
+        bookUpdateInput.setPrice(100);
+        bookUpdateInput.setStock(2);
     }
 
     @Test
@@ -90,6 +96,24 @@ class BookServiceTest {
 
         when(mockBookRepository.findBookByNameAndAuthorAndPublisher(input.getName(), input.getAuthor(), input.getPublisher())).thenReturn(book);
         Assertions.assertThrows(BusinessException.class, () -> bookService.addBook(input));
+    }
 
+    @Test
+    void testUpdateBook_valid_returnUUID() {
+        Book book = new Book(input.getName(), input.getAuthor(), input.getPublisher(), input.getPrice(), input.getStock());
+
+        when(mockBookRepository.findBookById(book.getId())).thenReturn(book);
+        when(mockBookRepository.save(any())).thenReturn(book);
+
+        UUID response = bookService.updateBook(book.getId(), bookUpdateInput);
+        Assertions.assertEquals(book.getId(), response);
+    }
+
+    @Test
+    void testUpdateBook_bookNotFound_throwsException() {
+        UUID bookId = UUID.randomUUID();
+
+        when(mockBookRepository.findBookById(bookId)).thenReturn(null);
+        Assertions.assertThrows(BusinessException.class, () -> bookService.updateBook(bookId, bookUpdateInput));
     }
 }
