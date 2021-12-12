@@ -23,3 +23,16 @@ is the first priority for their vision operations.
     • Swagger3
     • Docker
     • Docker Compose
+
+## COMPILE
+Requires JDK15, Maven and Docker.
+
+Run **build.sh** file in directory root. This will compile application and build a docker image.
+   
+    > chmod +x build.sh 
+    
+    > ./build.sh
+
+## RUN
+
+    > docker-compose -f docker-compose.yaml up
