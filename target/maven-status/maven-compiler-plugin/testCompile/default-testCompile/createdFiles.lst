@@ -1,3 +1,4 @@
-com/onurcelik/readingisgood/customer/service/impl/CustomerServiceTest.class
 com/onurcelik/readingisgood/address/service/impl/AddressServiceTest.class
+com/onurcelik/readingisgood/book/service/impl/BookServiceTest.class
+com/onurcelik/readingisgood/customer/service/impl/CustomerServiceTest.class
 com/onurcelik/readingisgood/ApplicationTests.class

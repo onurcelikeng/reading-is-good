@@ -235,13 +235,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMDgxNTcsImV4cCI6MTYzOTMxMTc1N30.As22SIV2Y6PV7PgncfW5V9z3l6U9SjZI7CoJ_mR03yU",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMzE1MDYsImV4cCI6MTYzOTMzODcwNn0.Ewj1izKAi25jxypz6xJpcZIgfOX3YxTeNSPdBBqgw5c",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Nutuk\",\n    \"author\": \"Mustafa Kemal Atatürk\",\n    \"publisher\": \"Cumhuriyet Yayınları\",\n    \"price\": 150,\n    \"stock\": 10\n}",
+							"raw": "{\n    \"name\": \"Nutuk\",\n    \"author\": \"Mustafa Kemal Atatürk\",\n    \"publisher\": \"Cumhuriyet Yayınları\",\n    \"price\": 100,\n    \"stock\": 10\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,13 +334,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMTg3MDAsImV4cCI6MTYzOTMyNTkwMH0.w4MPNXO3dZZKxuXjX1BQMGPmSmSxje9lwOkKdGI4VHc",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMzE1MDYsImV4cCI6MTYzOTMzODcwNn0.Ewj1izKAi25jxypz6xJpcZIgfOX3YxTeNSPdBBqgw5c",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"customerId\": \"5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab\",\n    \"addressId\": \"a0c6b670-67ce-44ad-ae0f-60101d98a282\",\n    \"orderItems\": [\n        {\n            \"bookId\": \"527d6c84-eb3d-419f-8ac0-cc380d7f5415\",\n            \"amount\": 1\n        }\n    ]\n}",
+							"raw": "{\n    \"customerId\": \"5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab\",\n    \"addressId\": \"a0c6b670-67ce-44ad-ae0f-60101d98a282\",\n    \"orderItems\": [\n        {\n            \"bookId\": \"26db3968-d185-4b95-92ac-9cee91159bf3\",\n            \"amount\": 1\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -452,7 +452,33 @@
 		},
 		{
 			"name": "Statistics",
-			"item": []
+			"item": [
+				{
+					"name": "getStatistics",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMzE1MDYsImV4cCI6MTYzOTMzODcwNn0.Ewj1izKAi25jxypz6xJpcZIgfOX3YxTeNSPdBBqgw5c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/statistics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"statistics"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
