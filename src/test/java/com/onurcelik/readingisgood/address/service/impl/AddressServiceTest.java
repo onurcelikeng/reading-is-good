@@ -89,13 +89,10 @@ class AddressServiceTest {
         UUID addressId = UUID.randomUUID();
         Address address = new Address(input.getCustomerId(), input.getTitle(), input.getAddress(), input.getStreetNumber(), input.getFloor(), input.getFlat(), input.getCity(), input.getTown());
 
-        // Given
         when(mockAddressRepository.findAddressByAddressId(addressId)).thenReturn(address);
 
-        // When
         AddressOutput addressOutput = addressService.getAddress(addressId);
 
-        // Then
         Assertions.assertNotNull(addressOutput);
     }
 

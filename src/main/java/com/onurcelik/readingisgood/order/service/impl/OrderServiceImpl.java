@@ -123,11 +123,9 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> getOrdersByCustomer(UUID customerId, int pageNumber, int pageSize) {
         Page<Order> orderPage = orderRepository.findAllByCustomerId(customerId, PageRequest.of(pageNumber, pageSize));
         if(!orderPage.hasContent()) {
-            throw new BusinessException("");
+            throw new BusinessException("Order not found!");
         }
-
-        List<Order> orders = orderPage.getContent();
-        return orders;
+        return orderPage.getContent();
     }
 
     @Override
