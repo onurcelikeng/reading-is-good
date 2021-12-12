@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "aae5e261-6111-460e-b8ea-aab5218e8df0",
+		"name": "GETIR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMDc0MzEsImV4cCI6MTYzOTMxMTAzMX0.PLFlpkZwQ44ioxCqMxitta886gVRWTfDY3Dsw0Cusrk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Onur\",\n    \"middleName\": null,\n    \"lastName\": \"Celik\",\n    \"email\": \"onurantmil@gmail.com\",\n    \"phone\": \"5074406251\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAddressesByCustomerId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkyNTk1OTksImV4cCI6MTYzOTI2MzE5OX0.4N4wY6h1_KbM5dwZ-rtH1009Eth1mGNA3u0MNSDkXsk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/customers/38a583f2-6424-4a37-8ddf-89e816369869/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"38a583f2-6424-4a37-8ddf-89e816369869",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersByCustomerId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMTg3MDAsImV4cCI6MTYzOTMyNTkwMH0.w4MPNXO3dZZKxuXjX1BQMGPmSmSxje9lwOkKdGI4VHc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "pageNumber",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/customers/5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customers",
+								"5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMDgxNTcsImV4cCI6MTYzOTMxMTc1N30.As22SIV2Y6PV7PgncfW5V9z3l6U9SjZI7CoJ_mR03yU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab\",\n    \"title\": \"Ev Adresi\",\n    \"address\": \"Cevizli Mah, Kurşunlu Sk. Deluxia Dragos Sitesi\",\n    \"streetNumber\": \"2\",\n    \"floor\": \"7\",\n    \"flat\": \"161\",\n    \"city\": \"Istanbul\",\n    \"town\": \"Maltepe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/address",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMDgxNTcsImV4cCI6MTYzOTMxMTc1N30.As22SIV2Y6PV7PgncfW5V9z3l6U9SjZI7CoJ_mR03yU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab\",\n    \"title\": \"Ev Adresi\",\n    \"address\": \"Cevizli Mah, Kurşunlu Sk. Deluxia Dragos Sitesi\",\n    \"streetNumber\": \"2\",\n    \"floor\": \"8\",\n    \"flat\": \"161\",\n    \"city\": \"Istanbul\",\n    \"town\": \"Maltepe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/address/a0c6b670-67ce-44ad-ae0f-60101d98a282",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"a0c6b670-67ce-44ad-ae0f-60101d98a282"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMDgxNTcsImV4cCI6MTYzOTMxMTc1N30.As22SIV2Y6PV7PgncfW5V9z3l6U9SjZI7CoJ_mR03yU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/address/a0c6b670-67ce-44ad-ae0f-60101d98a282",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"a0c6b670-67ce-44ad-ae0f-60101d98a282"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "createBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMDgxNTcsImV4cCI6MTYzOTMxMTc1N30.As22SIV2Y6PV7PgncfW5V9z3l6U9SjZI7CoJ_mR03yU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nutuk\",\n    \"author\": \"Mustafa Kemal Atatürk\",\n    \"publisher\": \"Cumhuriyet Yayınları\",\n    \"price\": 150,\n    \"stock\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkyNTk1OTksImV4cCI6MTYzOTI2MzE5OX0.4N4wY6h1_KbM5dwZ-rtH1009Eth1mGNA3u0MNSDkXsk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 150,\n    \"stock\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/bd7b2d37-d336-4603-b122-1fb0be172a93",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"bd7b2d37-d336-4603-b122-1fb0be172a93"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBooks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkyNTk1OTksImV4cCI6MTYzOTI2MzE5OX0.4N4wY6h1_KbM5dwZ-rtH1009Eth1mGNA3u0MNSDkXsk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "createOrder",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMTg3MDAsImV4cCI6MTYzOTMyNTkwMH0.w4MPNXO3dZZKxuXjX1BQMGPmSmSxje9lwOkKdGI4VHc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": \"5320a8ce-dd9d-41cd-8a1e-fe4d57ff19ab\",\n    \"addressId\": \"a0c6b670-67ce-44ad-ae0f-60101d98a282\",\n    \"orderItems\": [\n        {\n            \"bookId\": \"527d6c84-eb3d-419f-8ac0-cc380d7f5415\",\n            \"amount\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersBetweenStartDateAndEndDate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPTlVSQ0VMSUsiLCJpYXQiOjE2MzkzMTg3MDAsImV4cCI6MTYzOTMyNTkwMH0.w4MPNXO3dZZKxuXjX1BQMGPmSmSxje9lwOkKdGI4VHc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders?startDate=2021-12-12T01:00:00.000-01:00&endDate=2021-12-12T23:00:00.000-01:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2021-12-12T01:00:00.000-01:00"
+								},
+								{
+									"key": "endDate",
+									"value": "2021-12-12T23:00:00.000-01:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer QUWEQWGDQHDGSHAJDGLJYEGWQYJGDHJWQGDWQYDGQWJDGAHSDG",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ONURCELIK\",\n    \"password\": \"0123456789$abcdefgAB\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
