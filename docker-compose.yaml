@@ -1,31 +1,17 @@
 version: '3.8'
 services:
-  backend:
-    container_name: "readinisgood-service"
-    restart: 'always'
-    ports:
-      - "8080:8080"
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        JAR_FILE: reading-is-good.jar
-    depends_on:
-      - mongodb
-    environment:
-      - SPRING_DATA_MONGODB_.HOST=mongodb
   mongodb:
-    container_name: "readinisgood-db"
-    image: mongo
+    image: mongo:latest
     ports:
       - '27017:27017'
-    volumes:
-      - data:/data
+    container_name: mongodb
+  reading-is-good:
+    image: reading-is-good
+    container_name: reading-is-good
+    ports:
+      - '8080:8080'
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin1234
-volumes:
-  data: { }
-networks:
-  default:
-    name: mongo_network
+      - SPRING_DATA_MONGODB_.HOST=mongodb
+
+    links:
+      - mongodb
